@@ -13,3 +13,6 @@
 .img-hover-zoom:hover img {
   transform: scale(1.1);
 }
+body{
+  background-color: #F3F4F6;
+}
