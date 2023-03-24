@@ -73,7 +73,7 @@ const Body = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center row gap-[55px] flex-wrap p-10 justify-center">
+      <div className="flex items-center row gap-[55px] flex-wrap p-[30px] justify-center">
         {filterRestaurant.map((restaurant) => {
           return (
             <RestaurantCard key={restaurant?.data?.uuid} {...restaurant.data} />
