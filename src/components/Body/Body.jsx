@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { API_URL, restaurantList } from "../constant/constant.js";
+import { API_URL } from "../constant/constant.js";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -9,7 +9,7 @@ const Body = () => {
 
   function filterData(searchInput, restaurant) {
     const filterData = restaurant.filter((restaurant) => {
-      restaurant.data.name.toLowerCase().includes(searchInput.toLowerCase());
+      return restaurant.data.name.toLowerCase().includes(searchInput.toLowerCase());
     });
     return filterData;
   }
