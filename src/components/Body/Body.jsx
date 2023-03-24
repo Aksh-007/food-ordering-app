@@ -34,7 +34,7 @@ const Body = () => {
 
   return (
     <>
-      <div className=" mb-5 mt-[150px] md:mt-[50px] px-[50px]">
+      <div className=" mb-5 mt-[100px] md:mt-[130px]  px-[50px]">
         <div className="max-w-lg mx-auto">
           <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
             <input
