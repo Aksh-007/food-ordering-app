@@ -12,7 +12,7 @@ const RestaurantCard = ({
   uuid,
 }) => {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 display:flex flex-direction:row h-[27rem]">
+    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 display:flex flex-direction:row md:h-[27rem]">
       <div className="img-hover-zoom">
         <img
           className="rounded-t-lg "
