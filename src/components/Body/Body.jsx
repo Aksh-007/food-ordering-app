@@ -36,7 +36,7 @@ const Body = () => {
     <>
       <div className=" mb-5 mt-[100px] md:mt-[130px]  px-[50px]">
         <div className="max-w-lg mx-auto">
-          <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+          <div className="relative flex items-center w-full h-12 rounded-lg shadow-lg bg-white overflow-hidden">
             <input
               className="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
               type="text"
