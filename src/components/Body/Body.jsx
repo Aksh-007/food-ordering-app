@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { API_URL } from "../constant/constant.js";
+// import { API_URL } from "../constant/constant.js";
+
+function filterData(searchInput, restaurant) {
+  const filterData = restaurant.filter((restaurant) => {
+    return restaurant.data.name
+      .toLowerCase()
+      .includes(searchInput.toLowerCase());
+  });
+  return filterData;
+}
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [allRestaurant, setAllRestaurant] = useState([]);
   const [filterRestaurant, setFilteredRestaurant] = useState([]);
 
-  function filterData(searchInput, restaurant) {
-    const filterData = restaurant.filter((restaurant) => {
-      return restaurant.data.name.toLowerCase().includes(searchInput.toLowerCase());
-    });
-    return filterData;
-  }
-
   useEffect(() => {
-    getRestaurants();
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      // console.log(latitude,longitude)
+      // use the latitude and longitude to get the user's address
+      getRestaurants(latitude, longitude);
+    });
   }, []);
 
-  async function getRestaurants() {
+  async function getRestaurants(latitude, longitude) {
     try {
-      const data = await fetch(API_URL);
+      const data = await fetch(
+        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&page_type=DESKTOP_WEB_LISTING`
+      );
       const json = await data.json();
       console.log(json);
       //   setAllRestaurant(json)
