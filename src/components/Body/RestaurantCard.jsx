@@ -6,13 +6,14 @@ const RestaurantCard = ({
   cloudinaryImageId,
   cuisines,
   aggregatedDiscountInfoV2,
-  avgRating,
-  veg,
-  totalRatings,
-  uuid,
+  avgRating,uuid,
+  costForTwoString,
+  area,
+  deliveryTime,
+  totalRatings
 }) => {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 display:flex flex-direction:row md:h-[27rem]">
+    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 display:flex flex-direction:row md:h-[39rem]">
       <div className="img-hover-zoom">
         <img
           className="rounded-t-lg "
@@ -28,7 +29,24 @@ const RestaurantCard = ({
         </a>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {cuisines.join(', ')}
+         
         </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {aggregatedDiscountInfoV2?.descriptionList[0]?.meta}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Average Cost : {costForTwoString}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Area : {area}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Estimate Delivery Time : {deliveryTime}min
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Average Cost : {costForTwoString}
+        </p>
+
         <a
           href="/"
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white  rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300  dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:bg-blue-600
